@@ -1,0 +1,16 @@
+# version 1.0
+# constact: piotr4@gmail.com
+# GPLv3
+
+[Desktop Entry]
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory
+Actions=search
+X-KDE-Priority=TopLevel
+
+[Desktop Action search]
+Name=Search Here
+Icon=system-search
+Exec=bash -c 'type mate-search-tool; if [ $? -eq 0 ]; then mate-search-tool --contains="" --path="%u"; else kdialog --title "Package not found" --error "mate-search-tool is missing. Please install mate-utils from package manager and try again."; fi;';
+ 
